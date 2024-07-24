@@ -306,8 +306,8 @@
     
     <h3 class="title is-4">Additional Edit Directions</h3>
     <div class="content has-text-justified">
-      <img src="./images/interface-gan-edits.jpg" alt="interface">
       <p style="font-size: 18px;"> We perform attribute editing by using the edit directions obtained from InterfaceGAN. The edit directions generalize well in T2I models, indicating easy integration of any off-the-shelf StyleGAN editing method in our framework. </p>
+      <img src="./images/interface-gan-edits.jpg" alt="interface">
     </div>
   </div>
 </div>
@@ -335,10 +335,9 @@
     <br>
     <div class="content has-text-justified" >
       <!-- <h3 class="title is-3">Key idea</h3> -->
-      <img src="./images/multi-id-pipeline.jpg" alt="scheme" style="border: 2px solid gray; border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px;">
-      <br>
       <p style="font-size: 18px;"><br>We run multiple parallel diffusion processes, one for each subject and one for the background and fuse them using an instance segmentation mask at each denoising step. The instance mask can be user-provided or obtained by segmenting a generated image of two subjects by the same T2I model. Note that the diffusion process for each subject is passed through its corresponding fine-tuned model, which results in excellent identity preservation. </p>
-
+      <br>
+      <img src="./images/multi-id-pipeline.jpg" alt="scheme" style="border: 2px solid gray; border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px;">
     </div>
   </div>
   </div>
@@ -530,23 +529,23 @@
         }
   </style>
     <div class="columns is-centered has-text-centered">
-      <h2 class="title is-3">More Results</h2>
+      <h2 class="title is-3">Applications</h2>
     </div>
     <br>
-    <h3 class="title is-4">Restoration</h2>
+    <h3 class="title is-4">Face Restoration</h2>
     <div class="content has-text-justified">
+      <br>
+      <p style="font-size: 18px;"><strong>Face Restoration:</strong> The disentangled &#x1D54A;<sup>+</sup> latent space serves as an excellent face prior in StyleGANs. Leveraging this, we perform face restoration by projecting a corrupted face image into the &#x1D54A;<sup>+</sup> latent space using the StyleGAN encoder to condition the T2I model. The resultant generated images look realistic and can be embedded and edited using T2I capabilities. Personalization of such corrupted images is challenging as the model could easily overfit the given single-face image. </p>
       <br>
       <img src="./images/restoration-blur.jpg" alt="rest-blur">
       <br>
       <img src="./images/restoration-masked.jpg" alt="rest-masked">
       <br>
-      <p style="font-size: 18px;"><strong>Face Restoration:</strong> The disentangled &#x1D54A;<sup>+</sup> latent space serves as an excellent face prior in StyleGANs. Leveraging this, we perform face restoration by projecting a corrupted face image into the &#x1D54A;<sup>+</sup> latent space using the StyleGAN encoder to condition the T2I model. The resultant generated images look realistic and can be embedded and edited using T2I capabilities. Personalization of such corrupted images is challenging as the model could easily overfit the given single-face image. </p>
+      <p style="font-size: 18px;"><strong>Sketch-to-image:</strong> We use pSp encoder trained to map edge images to the &#x1D54A;<sup>+</sup> latent space for sketch to image generation. The obtained &#x1D54A; latent code can then be used to condition the T2I model for real image generation. </p>
       <br>
       <img src="./images/restoration-sketch.jpg" alt="rest-sketch">
-      <br>
-      <p style="font-size: 18px;"><strong>Sketch-to-image:</strong> We use pSp encoder trained to map edge images to the &#x1D54A;<sup>+</sup> latent space for sketch to image generation. The obtained &#x1D54A; latent code can then be used to condition the T2I model for real image generation. </p>
     <br>
-    
+      
 </section>
 
 <hr>
@@ -561,7 +560,7 @@
   </style>
     <h2 class="title">Acknowledgments</h2>
     <p style="font-size: 18px;">
-      The authors are thankful to Aniket Dashpute, Ankit Dhiman and Abhijnya Bhat for reviewing the draft and providing helpful feedback during the review phase. Rishubh Parihar is partly supported by PMRF from Govt. of India and Kotak AI Center at IISc. 
+      The authors are thankful to Aniket Dashpute, Ankit Dhiman and Abhijnya Bhat for reviewing the draft and providing helpful feedback. Rishubh Parihar is partly supported by PMRF from Govt. of India and Kotak AI Center at IISc. 
     </p>
 </div>
 </div>
